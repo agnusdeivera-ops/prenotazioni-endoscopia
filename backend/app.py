@@ -11,6 +11,7 @@ def get_prenotazioni():
 @app.route("/prenotazioni", methods=["POST"])
 def crea_prenotazione():
     data = request.json
+    # Controllo slot già occupato per stesso medico, data e orario
     for p in prenotazioni:
         if p["data"] == data["data"] and p["orario"] == data["orario"] and p["medico"] == data["medico"]:
             return jsonify({"errore": "Slot già occupato"}), 400
@@ -18,4 +19,4 @@ def crea_prenotazione():
     return jsonify({"message": "Prenotazione creata"}), 201
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
