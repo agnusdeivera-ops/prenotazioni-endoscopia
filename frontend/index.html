@@ -1,12 +1,15 @@
 <h2>Prenota visita endoscopica</h2>
 <form id="form">
   <input type="text" id="nome" placeholder="Nome paziente" required>
+   <input type="text" id="cognome" placeholder="Cognome" required>
+    <input type="date" id="data_nascita" placeholder="Data di nascita" required>
+    <input type="text" id="cf" placeholder="Codice Fiscale" required>
   <select id="visita">
-    <option>Gastroscopia</option>
-    <option>Colonscopia</option>
-    <option>Colonscopia con biopsie</option>
-    <option>Colonscopia con polipectomia</option>
-    <option>Gastroscopia con biopsie</option>
+    <option> EGDS-Esofagogastroduodenoscopia</option>
+    <option>Colonscopia con colonscopio flessibile</option>
+    <option>Colonscopia con colonscopio flessibile con biopsie</option>
+    <option>Colonscopia con colonscopio flessibile con polipectomia</option>
+    <option>EGDS-Esofagogastroduodenoscopia con biopsie</option>
   </select>
   <input type="date" id="data" required>
   <input type="time" id="orario" required>
