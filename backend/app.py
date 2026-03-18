@@ -2,7 +2,13 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-prenotazioni = []
+prenotazioni = [
+    {
+        "data": "2026-03-18",
+        "orario": "09:00",
+        "medico": "Dr. Rossi"
+    }
+]
 
 @app.route("/prenotazioni", methods=["GET"])
 def get_prenotazioni():
