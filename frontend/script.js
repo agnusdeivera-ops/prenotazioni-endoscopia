@@ -21,10 +21,17 @@ document.getElementById("form").addEventListener("submit", async (e) => {
 
     const json = await res.json();
 
-    alert(`La tua prenotazione è stata inviata e risulta in attesa di conferma:\n\n` +
-          `Nome: ${prenotazione.nome} ${prenotazione.cognome}\n` +
-          `Visita: ${prenotazione.tipo_visita}\n` +
-          `Medico: ${prenotazione.medico}\n` +
-          `Data/Ora: ${prenotazione.data} ${prenotazione.orario}\n` +
-          `Stato: ${prenotazione.stato}`);
+    // Mostra il toast
+    const toast = document.getElementById("toast");
+    toast.innerText = `Prenotazione inviata e in attesa di conferma!\n` +
+                      `${prenotazione.tipo_visita} con ${prenotazione.medico}\n` +
+                      `${prenotazione.data} ${prenotazione.orario}`;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4000);
+
+    // Resetta il form
+    document.getElementById("form").reset();
 });
