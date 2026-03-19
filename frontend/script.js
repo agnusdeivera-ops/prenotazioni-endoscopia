@@ -1,7 +1,6 @@
 document.getElementById("form").addEventListener("submit", async (e) => {
-    e.preventDefault(); // evita che la pagina si ricarichi
+    e.preventDefault();
 
-    // prendi i valori dal form
     const prenotazione = {
         nome: document.getElementById("nome").value,
         cognome: document.getElementById("cognome").value,
@@ -10,10 +9,10 @@ document.getElementById("form").addEventListener("submit", async (e) => {
         tipo_visita: document.getElementById("visita").value,
         medico: document.getElementById("medico").value,
         data: document.getElementById("data").value,
-        orario: document.getElementById("orario").value
+        orario: document.getElementById("orario").value,
+        stato: "In attesa di conferma"
     };
 
-    // invia la prenotazione al backend
     const res = await fetch("/prenotazioni", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -22,6 +21,10 @@ document.getElementById("form").addEventListener("submit", async (e) => {
 
     const json = await res.json();
 
-    // mostra notifica semplice
-    alert("Prenotazione effettuata:\n" + JSON.stringify(json, null, 2));
+    alert(`La tua prenotazione è stata inviata e risulta in attesa di conferma:\n\n` +
+          `Nome: ${prenotazione.nome} ${prenotazione.cognome}\n` +
+          `Visita: ${prenotazione.tipo_visita}\n` +
+          `Medico: ${prenotazione.medico}\n` +
+          `Data/Ora: ${prenotazione.data} ${prenotazione.orario}\n` +
+          `Stato: ${prenotazione.stato}`);
 });
