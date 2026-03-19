@@ -8,15 +8,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* CARD */
 .card {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  width: 350px;
+  width: 400px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
@@ -25,11 +24,10 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* INPUT */
 input, select {
   width: 100%;
   padding: 10px;
-  margin: 8px 0;
+  margin: 5px 0;
   border-radius: 8px;
   border: 1px solid #ccc;
   transition: 0.2s;
@@ -40,13 +38,11 @@ input:focus, select:focus {
   outline: none;
 }
 
-/* GRIGLIA */
 .grid {
   display: flex;
   gap: 10px;
 }
 
-/* BOTTONE */
 button {
   width: 100%;
   padding: 12px;
@@ -57,6 +53,7 @@ button {
   cursor: pointer;
   margin-top: 10px;
   font-weight: bold;
+  transition: 0.2s;
 }
 
 button:hover {
