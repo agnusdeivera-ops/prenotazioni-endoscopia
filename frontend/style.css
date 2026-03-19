@@ -1,3 +1,4 @@
+/* Base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -24,6 +25,7 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* Form input */
 input, select {
   width: 100%;
   padding: 10px;
@@ -38,11 +40,13 @@ input:focus, select:focus {
   outline: none;
 }
 
+/* Grid layout */
 .grid {
   display: flex;
   gap: 10px;
 }
 
+/* Bottone */
 button {
   width: 100%;
   padding: 12px;
@@ -58,4 +62,27 @@ button {
 
 button:hover {
   background: #2563eb;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s ease;
+  z-index: 1000;
+  max-width: 300px;
+  font-size: 14px;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
