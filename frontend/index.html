@@ -1,21 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prenotazioni Endoscopia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <div class="container">
   <div class="card">
     <h2>Prenota visita endoscopica</h2>
 
     <form id="form">
-      <!-- Nome e Cognome -->
       <div class="grid">
         <input type="text" id="nome" placeholder="Nome paziente" required>
         <input type="text" id="cognome" placeholder="Cognome" required>
       </div>
 
-      <!-- Data di nascita e CF -->
       <div class="grid">
         <input type="date" id="data_nascita" required>
         <input type="text" id="cf" placeholder="Codice Fiscale" required>
       </div>
 
-      <!-- Tipo visita e Medico -->
       <div class="grid">
         <select id="visita" required>
           <option value="">Seleziona tipo visita</option>
@@ -34,7 +41,6 @@
         </select>
       </div>
 
-      <!-- Data e ora -->
       <div class="grid">
         <input type="date" id="data" required>
         <input type="time" id="orario" required>
@@ -45,4 +51,9 @@
   </div>
 </div>
 
+<!-- CONTENITORE TOAST -->
+<div id="toast"></div>
+
 <script src="script.js"></script>
+</body>
+</html>
